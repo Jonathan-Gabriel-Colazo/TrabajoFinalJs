@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/style/style.css">
+    <link rel="shortcut icon" href="./asset/images/logoCajaPlus.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>CAJA-PLUS</title>
+</head>
+
+<body id="bodyLogin">
+
+    <div id="Login">
+        <h1>Bienvenido a caja - <span>plus</span></h1>
+
+        <form class="formsLogin" id="formLogin">
+            <label for="ingAlias">Ingrese su usuario</label>
+            <input id="ingAlias" type="text" placeholder="cristianzanchez2025">
+            <label for="ingPass">ingrese su contraseña</label>
+            <input id="ingPass" type="password" placeholder="Harvez1548">
+            <button id="buttonLogin" type="button">Login</button>
+        </form>
+
+        <h3 id="nUser">Nuevo Usuario</h3>
+        <h3 id="RevalidaDatos">Olvide mi contraseña</h3>
+
+        <form class="formsLogin" id="formNewUser">
+            <label for="ingName">Ingrese su nombre</label>
+            <input id="ingName" name="nombre" type="text" placeholder="Jonathan Colazo">
+            <label for="ingDate">ingrese su fecha de nacimiento</label>
+            <input id="ingDate" name="fechan" type="date">
+            <label for="ingTel">Ingrese su telefono</label>
+            <input id="ingTel" name="telefono" type="tel" placeholder="3517535004">
+            <label for="ingEmail">ingrese su e-mail</label>
+            <input id="ingEmail" name="email" type="email" placeholder="jonathan34964@gmail.com">
+            <label for="ingNewalias">Ingrese su usuario</label>
+            <input id="ingNewalias" name="alias" type="text" placeholder="cristianzanchez2025">
+            <label for="ingNewPass">ingrese su contraseña</label>
+            <input id="ingNewPass" name="pass" type="password" placeholder="Harvez1548">
+            <button id="buttonNewUser" type="submit" name="button">Guardar</button>
+
+
+        </form>
+
+        <form class="formsLogin" id="recuperaUsuario">
+
+            <label for="recuAlias">Ingrese su usuario</label>
+            <input id="recuAlias" type="text" placeholder="cristianzanchez2025">
+            <label for="recuEmail">ingrese su Email</label>
+            <input id="recuEmail" type="text" placeholder="julianbarrios@gmail.com">
+            <button id="buttonRus" type="button">Consultar</button>
+        </form>
+    </div>
+
+
+
+
+    <div id="plataforma">
+
+        <section id="botones">
+            <button id="agregarProducto"><i class="fa-sharp fa-solid fa-plus"></i></button>
+            <button id="deleteProducto"><i class="fa-solid fa-trash"></i></button>
+        </section>
+
+        <div class="formulariosBA">
+            <form class="formulariosOcultos" id="formAgregaP">
+                <label for="codigoInput">Codigo</label>
+                <input type="number" name="codigo" id="codigoInput" placeholder="001112220033355">
+                <label for="nombreInput">Nombre</label>
+                <input type="text" name="nombre" id="nombreInput" placeholder="Pure de tomate">
+                <label for="marcaInput">Marca</label>
+                <input type="text" name="marca" id="marcaInput" placeholder="La Campagnola">
+                <label for="tamanoInput">Tamaño</label>
+                <input type="text" name="tamano" id="tamanoInput" placeholder="530 gr">
+                <label for="precioInput">Precio</label>
+                <input type="number" name="precio" id="precioInput" placeholder="207,00">
+                <label for="familiaInput">Familia</label>
+
+                <select name="familia" id="familiaInput">
+                    <option value="Despensa">Despensa</option>
+                    <option value="Verduleria">Verduleria</option>
+                    <option value="Pollo">Pollo</option>
+                    <option value="Cerdo">Cerdo</option>
+                    <option value="Vaca">vaca</option>
+                </select>
+
+                <label for="stockInput">Stock</label>
+                <input type="number" name="stock" id="stockInput" placeholder="600">
+                <button type="button" id="agregarButon">Agregar</button>
+                <div class=up>
+                    <a id="ocultarAgregaP"><i class="fa-solid fa-chevron-up"></i></a>
+                </div>
+            </form>
+
+            <form id="eliminaProducto">
+                <label for="eliminaProduct">Producto que desea eliminar</label>
+                <input type="text" id="eliminaProduct" placeholder="Polenta , Presto pronta">
+                <button type="button"  id="eliminaButton">Eliminar</button>
+                <div class=up>
+                    <a id="ocultarEliminaP"><i class="fa-solid fa-chevron-up"></i></a>
+                </div>
+            </form>
+        </div>
+
+        <form action="" class="formBuscarP">
+            <label for="buscaProducto">Producto</label>
+            <input type="text" id="buscaProducto" placeholder="Polenta , Presto pronta">
+            <button type="submit" id="buscaButton">Buscar</button>
+        </form>
+
+        <div id="muestraProducto"></div>
+    </div>
+
+
+
+    <script src="./asset/scrypts/inicio.js"></script>
+    <script src="./asset/scrypts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

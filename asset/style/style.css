@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#plataforma {
+  background-image: linear-gradient(to left, #697468, #1928b4);
+  display: none;
+}
+
+.title {
+  text-transform: capitalize;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 60px;
+}
+
+.saludo {
+  text-transform: capitalize;
+  text-align: left;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 40px;
+  margin: 0 0 20px 50px;
+}
+
+#botones {
+  width: 200px;
+  height: 100px;
+}
+#botones button {
+  width: 70px;
+  height: 70px;
+  margin: 10px 0 10px 20px;
+  background-color: #39850e;
+  border-radius: 5px;
+}
+#botones button:hover {
+  background-color: #75c237;
+  box-shadow: 0 0 5px #00F529;
+}
+
+.formulariosBA {
+  display: flex;
+  flex-flow: row wrap;
+}
+.formulariosBA #formAgregaP {
+  width: 350px;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  border: 5px #000;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #4AF767;
+  display: none;
+  flex-direction: column;
+  text-align: left;
+}
+.formulariosBA #eliminaProducto {
+  width: 350px;
+  height: auto;
+  flex-wrap: nowrap;
+  margin: 10px;
+  padding: 10px;
+  border: 5px #000;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #4AF767;
+  display: none;
+  flex-direction: column;
+  text-align: left;
+}
+.formulariosBA input {
+  width: 70%;
+  margin: 10px 0 10px 90px;
+}
+.formulariosBA input:focus {
+  box-shadow: 0 0 5px #4AF767;
+  border: #000;
+  background-color: #d8c0c0;
+}
+.formulariosBA label {
+  width: 80px;
+  font-size: 25px;
+}
+.formulariosBA button {
+  margin: 10px 10px 10px 10px;
+  width: 100px;
+  height: 40px;
+}
+.formulariosBA button:hover {
+  background-color: #75c237;
+  box-shadow: 0 0 5px #00F529;
+}
+.formulariosBA select {
+  margin-left: 80px;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+}
+
+#buscaProducto {
+  width: 300px;
+  height: 50px;
+  margin: 10px 10px 10px 10px;
+  border: solid 2px #000;
+  border-radius: 10px;
+}
+
+.up {
+  height: 24px;
+  width: 24px;
+  background-color: rgba(156, 105, 154, 0.4745098039);
+  color: #000;
+  font-size: 20px;
+  text-align: center;
+  line-height: 12px;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+#muestraProducto {
+  margin-top: 20px;
+  width: 400px;
+  display: inline-table;
+  min-height: 400px;
+  border: solid 3px #000;
+  border-radius: 10px;
+  background-color: #d8c0c0;
+  color: #000;
+  font-size: 25px;
+}
+
+#bodyLogin {
+  background-image: linear-gradient(to left, #697468, #1928b4);
+  display: flex;
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#bodyLogin h1 {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+#bodyLogin .formsLogin {
+  width: 100%;
+  height: auto;
+  flex-wrap: nowrap;
+  margin: 10px;
+  padding: 10px;
+  border: 5px #000;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #4AF767;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#bodyLogin .formsLogin button {
+  justify-content: center;
+  width: 40%;
+}
+#bodyLogin .formsLogin input {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+}
+#bodyLogin .formsLogin label {
+  text-align: center;
+  font-size: 25px;
+}
+#bodyLogin #formNewUser {
+  display: none;
+}
+#bodyLogin #recuperaUsuario {
+  display: none;
+}
+#bodyLogin h3 {
+  margin-top: 20px;
+  text-transform: capitalize;
+  font-size: 25px;
+  color: grey;
+}
+#bodyLogin h3:hover {
+  color: #4AF767;
+}/*# sourceMappingURL=style.css.map */

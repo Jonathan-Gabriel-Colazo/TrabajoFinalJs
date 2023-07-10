@@ -1,0 +1,133 @@
+{
+  "Usuarios": [
+    {
+      "nombre": "Jonathan Colazo",
+      "fechan": "1990-02-28",
+      "telefono": "3517535004",
+      "email": "jonathan34964@gmail.com",
+      "alias": "jonathan828",
+      "pass": "34964828",
+      "id": 1
+    },
+    {
+      "nombre": "leoni Cortez",
+      "fechan": "1989-04-22",
+      "telefono": "3515178890",
+      "email": "elizabethcortezmarqui@gmail.com",
+      "alias": "leoni209",
+      "pass": "34684209",
+      "id": 2
+    },
+    {
+      "nombre": "Bianca Colazo",
+      "fechan": "2009-09-25",
+      "telefono": "3512404170",
+      "email": "biancalarayasmincolazo@gmail.com",
+      "alias": "Bianca989",
+      "pass": "49963077",
+      "id": 3
+    }
+  ],
+  "productos": [
+    {
+      "codigo": "101",
+      "nombre": "Bola de lomo",
+      "marca": "Ternera",
+      "tamano": "1000gr",
+      "precio": "2400",
+      "familia": "Vaca",
+      "stock": "10",
+      "id": 0
+    },
+    {
+      "codigo": "001",
+      "nombre": "Banana Ecuador",
+      "marca": "Ecuador",
+      "tamano": "1000gr",
+      "precio": "540",
+      "familia": "Verduleria",
+      "stock": "38",
+      "id": 1
+    },
+    {
+      "codigo": "002",
+      "nombre": "Banana Boliviana",
+      "marca": "Boliviana",
+      "tamano": "1000",
+      "precio": "340",
+      "familia": "Verduleria",
+      "stock": "38",
+      "id": 2
+    },
+    {
+      "codigo": "003",
+      "nombre": "Banana Boliviana Oferta",
+      "marca": "Boliviana Oferta",
+      "tamano": "1000gr",
+      "precio": "300",
+      "familia": "Verduleria",
+      "stock": "38",
+      "id": 3
+    },
+    {
+      "codigo": "005",
+      "nombre": "papa por kg",
+      "marca": "papa",
+      "tamano": "1000gr",
+      "precio": "400",
+      "familia": "Verduleria",
+      "stock": "100",
+      "id": 4
+    },
+    {
+      "codigo": "006",
+      "nombre": "papa oferta",
+      "marca": "papa",
+      "tamano": "1000",
+      "precio": "400",
+      "familia": "Verduleria",
+      "stock": "100",
+      "id": 5
+    },
+    {
+      "codigo": "007",
+      "nombre": "Tomate por kg",
+      "marca": "Tomate",
+      "tamano": "1000gr",
+      "precio": "470",
+      "familia": "Verduleria",
+      "stock": "50",
+      "id": 6
+    },
+    {
+      "codigo": "004",
+      "nombre": "Pera",
+      "marca": "Pera",
+      "tamano": "1000",
+      "precio": "460",
+      "familia": "Verduleria",
+      "stock": "40",
+      "id": 7
+    },
+    {
+      "codigo": "008",
+      "nombre": "Cebolla por kg",
+      "marca": "Cebolla",
+      "tamano": "1000",
+      "precio": "180",
+      "familia": "Verduleria",
+      "stock": "100",
+      "id": 8
+    },
+    {
+      "codigo": "102",
+      "nombre": "Cuadril Ternera",
+      "marca": "Ternera",
+      "tamano": "1000",
+      "precio": "2400",
+      "familia": "Vaca",
+      "stock": "20",
+      "id": 9
+    }
+  ]
+}
