@@ -1,4 +1,3 @@
-
 let Productos = [];
 
 fetch('../user.json')
@@ -146,7 +145,9 @@ function MuestraTotal() {
     console.log(acumulador);
 }
 
-let buscaButton = document.getElementById('buscaButton').addEventListener('click', (event) => {
+
+
+document.getElementById('buscaButton').addEventListener('click', (event) => {
     event.preventDefault();
     console.log(VentActual);
     buscarProducto();
@@ -154,7 +155,24 @@ let buscaButton = document.getElementById('buscaButton').addEventListener('click
     MuestraTotal();
 });
 
-console.log(Productos)
+
+function exportarPDF() {
+    let doc = new jsPDF();
+    let contenidoTabla = document.getElementById('muestraProducto').innerHTML;
+    let total = document.getElementById('muestraTotal').innerText;
+
+
+    doc.text('Ventas Actuales', 10, 10);
+    doc.fromHTML(contenidoTabla, 15, 15);
+    doc.text('Total: ' + total, 10, doc.autoTablepreviousfinalY + 5,);
+
+    let nombreArchivo = 'ventas.pdf'; 
+    doc.save(nombreArchivo);
+}
+
+document.getElementById("imprimeTicket").addEventListener('click',exportarPDF)
+
+
 
 function eliminarProducto() {
     let eliminaProducto = document.getElementById('eliminaProduct').value;
