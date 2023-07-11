@@ -6,7 +6,11 @@
 
 #plataforma {
   background-image: linear-gradient(to left, #697468, #1928b4);
-  display: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: auto;
+  height: 100%;
 }
 
 .title {
@@ -56,7 +60,7 @@
   flex-direction: column;
   text-align: left;
 }
-.formulariosBA #eliminaProducto {
+.formulariosBA #formEliminaP {
   width: 350px;
   height: auto;
   flex-wrap: nowrap;

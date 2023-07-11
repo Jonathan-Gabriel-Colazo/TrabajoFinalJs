@@ -5,8 +5,10 @@
   "main": "inicio.js",
   "scripts": {
     "json:server": "json-server --watch user.json"
-
   },
   "author": "Colazo Jonathan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "sweetalert2": "^11.7.12"
+  }
 }

@@ -6,7 +6,11 @@
 
 #plataforma {
     background-image: linear-gradient(to left, #697468, #1928b4);
-    display: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    height: 100%;
 
 }
 
@@ -67,7 +71,7 @@
 
     }
 
-    #eliminaProducto {
+    #formEliminaP {
         width: 350px;
         height: auto;
         flex-wrap: nowrap;
@@ -152,6 +156,7 @@
     color: #000;
     font-size: 25px;
 }
+
 
 #bodyLogin {
 

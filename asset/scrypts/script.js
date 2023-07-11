@@ -18,6 +18,7 @@ document.getElementById('agregarProducto').addEventListener('click', () => {
 
 
 
+
 let formAgregaP = document.getElementById('formAgregaP');
 document.getElementById('ocultarAgregaP').addEventListener('click', () => {
     formAgregaP.style.display = "none";
@@ -67,88 +68,155 @@ const postData = async () => {
 }
 
 
-
 const VentActual = [];
 
 function buscarProducto() {
     let buscaProducto = document.getElementById('buscaProducto').value;
 
-    let productosEncontrados = Productos.filter((producto) => {
+    const productosEncontrados = Productos.filter((producto) => {
         return producto.nombre.toLowerCase().includes(buscaProducto.toLowerCase());
     });
 
-    if (VentActual.some(producto => producto.id === buscaProducto )) {
-        
-    } else if (productosEncontrados.length > 0) {
-        productosEncontrados.cantidad = 1;
-        VentActual.push(...productosEncontrados); 
+    if (productosEncontrados.length > 0) {
+        const productoExistente = VentActual.find((producto) => producto.nombre === productosEncontrados[0].nombre);
+        if (productoExistente) {
+            productoExistente.cantidad++;
+        } else {
+            productosEncontrados[0].cantidad = 1;
+            VentActual.push(productosEncontrados[0]);
+        }
+
     } else {
-        console.log('No se encontró ningún producto con ese nombre');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No se encontró ningún producto con ese nombre',
+        })
     }
-
-
 }
 
-let muestraProducto = document.getElementById("muestraProducto")
+let muestraProducto = document.getElementById('muestraProducto');
+
 function muestraProductosEncontrados() {
-
+    let contenidoHTML = '';
     VentActual.forEach((productoSolo) => {
-        muestraProducto.innerHTML = `
-            <table>
-                <tr>
-                    <td>Producto</td>
-                    <td>cantidad</td>
-                    <td>Precio</td>
-                </tr>
-                <tr>
-                    <td>${productoSolo.nombre}</td>
-                    <td>01</td>
-                    <td>${productoSolo.precio}</td>
-                </tr>
-            </table>
-    `
-    muestraProducto.append()
-
+        contenidoHTML += `
+            <tr>
+                <td>${productoSolo.nombre}</td>
+                <td>${productoSolo.cantidad}</td>
+                <td>${productoSolo.precio}</td>
+            </tr>
+        `;
     });
 
+    muestraProducto.innerHTML = `
+        <table>
+            <tr>
+                <td>Producto</td>
+                <td>cantidad</td>
+                <td>Precio</td>
+            </tr>
+            ${contenidoHTML}
+        </table>
+    `;
 
 }
 
+let muestraTotal = document.getElementById("muestraTotal")
 
-document.getElementById('buscaButton').addEventListener('click', (event) => {
+function MuestraTotal() {
+    let acumulador = 0;
+
+    VentActual.forEach((productoSolo) => {
+        acumulador += productoSolo.precio * productoSolo.cantidad;
+
+    });
+    muestraTotal.innerHTML = `<h2>${acumulador}</h2>`;
+    muestraTotal.style.width = "300px";
+    muestraTotal.style.height = "100px";
+    muestraTotal.style.fontSize = "50px";
+    muestraTotal.style.border = "solid 5px #000";
+    muestraTotal.style.backgroundColor = "#fff";
+    muestraTotal.style.textAlign = "center";
+    muestraTotal.style.borderRadius = "10px";
+    muestraTotal.style.position = "fixed";
+    muestraTotal.style.bottom = "20px";
+    muestraTotal.style.right = "20px";
+
+    console.log(acumulador);
+}
+
+let buscaButton = document.getElementById('buscaButton').addEventListener('click', (event) => {
     event.preventDefault();
-    console.log(VentActual)
+    console.log(VentActual);
     buscarProducto();
     muestraProductosEncontrados();
+    MuestraTotal();
 });
 
+console.log(Productos)
 
-
-
-/*
 function eliminarProducto() {
     let eliminaProducto = document.getElementById('eliminaProduct').value;
 
-    let indice = listaProductos.findIndex((producto) => {
+    let indice = Productos.findIndex((producto) => {
         return producto.nombre.toLowerCase() === eliminaProducto.toLowerCase();
     });
 
     if (indice !== -1) {
-        listaProductos.splice(indice, 1);
-        alert('Eliminaste el producto: ' + eliminaProducto);
+        Productos.splice(indice, 1);
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: true
+        })
 
+        swalWithBootstrapButtons.fire({
+            title: `Estas Seguro ?`,
+            text: `deseas eliminar el producto ${eliminaProducto}`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'SI, eliminar!',
+            cancelButtonText: 'No, cancelar!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                swalWithBootstrapButtons.fire(
+                    'Eliminado!',
+                    `El producto ${eliminaProducto} fue eliminado`,
+                    'success'
+                )
+            } else if (
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelado',
+                    `el producto ${eliminaProducto} no fue eliminad`,
+                    'error'
+                )
+            }
+        })
         let buscaProducto = document.getElementById('buscaProducto').value;
         buscarProducto(buscaProducto);
     } else {
-        console.log('No se encontró el producto');
-        alert('No se encontró el producto');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No se encontró ningún producto con ese nombre',
+        })
     }
 }
 
 
 document.getElementById('eliminaButton').addEventListener('click', eliminarProducto);
+document.getElementById('deleteProducto').addEventListener('click', () => {
+    formEliminaP.style.display = "flex";
+});
 
-let eliminaProducto = document.getElementById('eliminaProducto');
+let formEliminaP = document.getElementById('formEliminaP');
 document.getElementById('ocultarEliminaP').addEventListener('click', () => {
-    eliminaProducto.style.display = "none";
-});*/
+    formEliminaP.style.display = "none";
+});
+
